@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "contact-list.component.scss"
+    ],
+    "names": [],
+    "file": "contact-list.component.css"
+}

@@ -1,0 +1,25 @@
+<label for="">Server Name</label>
+<input 
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)"> <!--$event = variable name during event binding-->
+  <p>{{ serverName }}</p>
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName"> <!--Two way binding... might not work since nested neeply (see video "Two-Way-Databinding(2:47)")-->
+<button class="btn btn-primary"
+  [disabled]="!allowNewServer" 
+  (click)="onCreateServer()"
+  >Add Server <!--The brackets around the attribute shows that angular has a dynamic determing effect on it; property binding. The paranthesis is the format for eventBinding-->
+</button> 
+<p [innerText]="allowNewServer"></p>  <!--property Binding-->
+<p>{{ allowNewServer }}</p> <!--String interpolation--> <!--Don't mix PB witih SI (ex [disabled] = "{{ allowNewServer }}")-->
+<p>{{ serverCreationStatus }}</p>
+
+<!-- <app-server></app-server> -->
+<app-server *ngFor="let server of servers"></app-server>
+<p *ngIf="serverCreated; else noServer">Server was createdm server bane us {{ serverName }}</p>
+<ng-template #noServer>
+  <p>No server was created</p>
+</ng-template>

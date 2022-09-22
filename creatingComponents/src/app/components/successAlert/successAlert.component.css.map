@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,EAAE,CAAC;EACD,gBAAgB,EAAC,KAAK;EACtB,KAAK,EAAC,KAAK;EACX,WAAW,EAAE,MAAM;CACpB",
+    "sources": [
+        "successAlert.component.scss"
+    ],
+    "names": [],
+    "file": "successAlert.component.css"
+}

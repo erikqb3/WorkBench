@@ -1,0 +1,25 @@
+<input class="form-control" [(ngModel)]="output" (input)="onUnlockButton($event)">
+<!-- <div [innerHTML]="output"></div> -->
+<p id="outputElement">{{ output }}</p>
+<button [disabled]="locked" class="btn btn-primary" (click)="clearOutput($event)">Submit</button>
+<hr>
+<button class="btn btn-primary" (click)="revealSurprise($event)">Fish surprise...</button>
+<p *ngIf="showSurprise == true; else showNothing">Surprise!!!!</p>
+<ng-template #showNothing>
+</ng-template>
+<div 
+  *ngFor="let loop of loops; let i = index"
+  [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'transparent'}"
+  [ngClass]="{'whiteColor':i >= 5}"
+>
+  {{ loop }}
+  <!-- <p *ngIf="(i>5); else blueAndWhite">
+   <span
+   [ngStyle]="{backgroundColor:blue}"
+   [ngClass]="whiteColor">{{i}} blue</span> 
+  </p>
+  <tg-template #blueAndWhite>
+    <span>{{i}} red</span> 
+  </tg-template> -->
+</div>
+
