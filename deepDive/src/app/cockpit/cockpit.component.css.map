@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "cockpit.component.scss"
+    ],
+    "names": [],
+    "file": "cockpit.component.css"
+}
