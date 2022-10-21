@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a
+        [routerLink]="['/servers',server.id]"
+        [queryParams]="{allowEdit: server.id === 3 ? '1' : '0'}"
+        fragment="loading"
+        href="#"
+        class="list-group-item"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
+      <!--[queryParams]="{allowEdit: server.id === 3 ? '1' : '0'}" only allows person with id of 3 to make edits-->
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <router-outlet></router-outlet> <!--adds a new hook which will be used on all child routes of the route being loaded on the servers-->
+    <!-- <a routerLink="/servers">Reload Page</a> -->
+    <!--relative path-->
+    <!--With relative paths, it always appends the path you specify in the routerLink to the end of  your current path; 
+      current path depends on which component you are currently on; servers/serves
+      app.component is home base-->
+    <!-- <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
+    <app-edit-server></app-edit-server>
+    <hr>
+    <app-server></app-server> -->
+  </div>
+</div>
+

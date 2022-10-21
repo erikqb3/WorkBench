@@ -1,0 +1,518 @@
+body section#stage {
+  width: 50rem;
+  height: 25rem;
+  background-color: black;
+  margin: 2.5rem auto;
+  position: relative;
+}
+
+body section#stage div#curtains_2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+body section#stage div#curtains_2 div {
+  width: 50%;
+  height: 100%;
+  background-color: orange;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+}
+
+body section#stage div#curtains_2 div p {
+  margin: 0.20rem;
+  color: white;
+  font-size: 2.5rem;
+}
+
+body section#stage div#curtains_2 div#curtain_L {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  left: 0;
+  -webkit-transition: left 1s linear;
+  transition: left 1s linear;
+}
+
+body section#stage div#curtains_2 div#curtain_R {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  right: 0;
+  -webkit-transition: right 1s ease-in;
+  transition: right 1s ease-in;
+}
+
+body section#stage div#curtains_2 div#curtain_L.open {
+  left: -25rem;
+}
+
+body section#stage div#curtains_2 div#curtain_R.open {
+  right: -25rem;
+}
+
+body section#stage div#backStage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+body section#stage div#backStage p {
+  color: orange;
+  font-size: 10rem;
+}
+
+body section#itsATrap {
+  width: 50rem;
+  height: 25rem;
+  background-color: black;
+  margin: 2.5rem auto;
+  background-color: #002455;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body section#itsATrap div.square {
+  width: 7.5rem;
+  height: 7.5rem;
+  background-color: #006caa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+body section#itsATrap div.square div.circle {
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: #fc4855;
+  border-radius: 100%;
+  position: absolute;
+}
+
+body section#itsATrap div#square1 {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+body section#itsATrap div#square1 div#circle1 {
+  -webkit-animation-name: circle1;
+          animation-name: circle1;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes circle1 {
+  0% {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+  25% {
+    top: 1.5rem;
+    left: 6rem;
+  }
+  50% {
+    top: 6rem;
+    left: 6rem;
+  }
+  75% {
+    top: 6rem;
+    left: 1.5rem;
+  }
+  100% {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+}
+
+@keyframes circle1 {
+  0% {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+  25% {
+    top: 1.5rem;
+    left: 6rem;
+  }
+  50% {
+    top: 6rem;
+    left: 6rem;
+  }
+  75% {
+    top: 6rem;
+    left: 1.5rem;
+  }
+  100% {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+}
+
+body section#itsATrap div#square2 div#circle2 {
+  -webkit-animation-name: circle2;
+          animation-name: circle2;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes circle2 {
+  0% {
+    border-radius: 50%;
+  }
+  25% {
+    /*(if you don't add both red and circle here it will start changing one or the other before you are ready) */
+    border-radius: 50%;
+    background-color: #fc4855;
+  }
+  50% {
+    /* now change to white square...but don't start rotating yet! */
+    border-radius: 0%;
+    background-color: white;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    /* stay a white square, but rotate 90deg */
+    border-radius: 0%;
+    background-color: white;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  100% {
+    /* stay rotated at 90, but change back to a circle */
+    border-radius: 50%;
+    background-color: #fc4855;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@keyframes circle2 {
+  0% {
+    border-radius: 50%;
+  }
+  25% {
+    /*(if you don't add both red and circle here it will start changing one or the other before you are ready) */
+    border-radius: 50%;
+    background-color: #fc4855;
+  }
+  50% {
+    /* now change to white square...but don't start rotating yet! */
+    border-radius: 0%;
+    background-color: white;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  75% {
+    /* stay a white square, but rotate 90deg */
+    border-radius: 0%;
+    background-color: white;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  100% {
+    /* stay rotated at 90, but change back to a circle */
+    border-radius: 50%;
+    background-color: #fc4855;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+body section#itsATrap div#square3 div.circle {
+  width: 0.875rem;
+}
+
+body section#itsATrap div#square3 div#half_L.circle {
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  border-radius: 0.875rem 0% 0% 0.875rem;
+  -webkit-animation-name: leftShift;
+          animation-name: leftShift;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+body section#itsATrap div#square3 div#half_R.circle {
+  -webkit-transform: translate(50%, 0%);
+          transform: translate(50%, 0%);
+  border-radius: 0% 0.875rem 0.875rem 0%;
+  -webkit-animation-name: rightShift;
+          animation-name: rightShift;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes leftShift {
+  0% {
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+  }
+  25% {
+    -webkit-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%);
+  }
+  50% {
+    -webkit-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%);
+  }
+  75% {
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+  }
+}
+
+@keyframes leftShift {
+  0% {
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+  }
+  25% {
+    -webkit-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%);
+  }
+  50% {
+    -webkit-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%);
+  }
+  75% {
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+  }
+}
+
+@-webkit-keyframes rightShift {
+  0% {
+    -webkit-transform: translate(50%, 0%);
+            transform: translate(50%, 0%);
+  }
+  25% {
+    -webkit-transform: translate(100%, 0%);
+            transform: translate(100%, 0%);
+  }
+  50% {
+    -webkit-transform: translate(100%, 0%);
+            transform: translate(100%, 0%);
+  }
+  75% {
+    -webkit-transform: translate(50%, 0%);
+            transform: translate(50%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(50%, 0%);
+            transform: translate(50%, 0%);
+  }
+}
+
+@keyframes rightShift {
+  0% {
+    -webkit-transform: translate(50%, 0%);
+            transform: translate(50%, 0%);
+  }
+  25% {
+    -webkit-transform: translate(100%, 0%);
+            transform: translate(100%, 0%);
+  }
+  50% {
+    -webkit-transform: translate(100%, 0%);
+            transform: translate(100%, 0%);
+  }
+  75% {
+    -webkit-transform: translate(50%, 0%);
+            transform: translate(50%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(50%, 0%);
+            transform: translate(50%, 0%);
+  }
+}
+
+body section#itsATrap div#square4 div#circle4 {
+  -webkit-animation-name: circle4;
+          animation-name: circle4;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes circle4 {
+  0% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  20% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  22% {
+    background-color: rgba(252, 72, 85, 0.5);
+    -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25);
+  }
+  35% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  50% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  52% {
+    background-color: rgba(252, 72, 85, 0.5);
+    -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25);
+  }
+  55% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  60% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  62% {
+    background-color: rgba(252, 72, 85, 0.5);
+    -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25);
+  }
+  65% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes circle4 {
+  0% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  20% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  22% {
+    background-color: rgba(252, 72, 85, 0.5);
+    -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25);
+  }
+  35% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  50% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  52% {
+    background-color: rgba(252, 72, 85, 0.5);
+    -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25);
+  }
+  55% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  60% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  62% {
+    background-color: rgba(252, 72, 85, 0.5);
+    -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25);
+  }
+  65% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    background-color: #fc4855;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,271 @@
+body{
+  section#stage{
+    width: 50rem;
+    height: 25rem;
+    background-color: black;
+    margin: 2.5rem auto;
+    position:relative;
+    div#curtains_2{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top:0;
+      display: flex;
+      overflow:hidden;
+      // background-color: rgba(0,0,0,0.5);
+      div{
+        width: 50%;
+        height: 100%;
+        background-color:orange;
+        display:flex;
+        align-items: center;
+        position:absolute;
+        p{
+          margin: 0.20rem;
+          color:white;
+          font-size: 2.5rem;
+        }
+      }
+      div#curtain_L{
+        justify-content: end;
+        left:0;
+        transition: left 1s linear;
+      }
+      div#curtain_R{
+        justify-content: start;
+        right:0;
+        transition: right 1s ease-in;
+      }
+      div#curtain_L.open{
+        left: -25rem;
+      }
+      div#curtain_R.open{
+        right: -25rem;
+      }
+      
+    }
+    div#backStage{
+        display:flex;
+        align-items: center;
+        justify-content:center;
+        width: 100%;
+        height: 100%;
+        p{
+          color:orange;
+          font-size: 10rem;
+        }
+    }
+  }
+  section#itsATrap{
+    width: 50rem;
+    height: 25rem;
+    background-color: black;
+    margin: 2.5rem auto;
+    background-color: rgb(0,36,85);
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly;
+    div.square{
+      width: 7.5rem;
+      height: 7.5rem;
+      background-color: rgb(0,108,170);
+      display:flex;
+      align-items:center;
+      justify-content: center;
+      position: relative;
+      div.circle{
+        width: 1.75rem;
+        height: 1.75rem;
+        background-color: rgb(252,72,85);
+        border-radius: 100%;
+        // margin: 0.5rem;
+        position:absolute;
+      }
+    }
+
+    div#square1{
+      align-items: start;
+      justify-content: start;
+      div#circle1{
+        animation-name: circle1;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-out;
+        transform:translate(-50%, -50%);
+      }
+      @keyframes circle1 {
+        0% {
+          top:1.5rem;
+          left: 1.5rem;
+        }
+        25% {
+          top:1.5rem;
+          left: 6rem;
+        }
+        50% {
+          top:6rem;
+          left: 6rem;
+        }
+        75% {
+          top:6rem;
+          left: 1.5rem;
+        }  
+        100% {
+          top:1.5rem;
+          left: 1.5rem;
+        }      
+      }
+    }
+    div#square2{
+      div#circle2{
+        animation-name: circle2;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      @keyframes circle2{
+        0% {border-radius: 50%}
+        25% { /*(if you don't add both red and circle here it will start changing one or the other before you are ready) */
+            border-radius: 50%;
+            background-color: rgb(252,72,85);
+        }
+        50% { /* now change to white square...but don't start rotating yet! */
+            border-radius: 0%;
+            background-color: white;
+            transform: rotate(0deg);
+        }
+        75% { /* stay a white square, but rotate 90deg */
+            border-radius: 0%;
+            background-color: white;
+            transform: rotate(90deg);   
+        }
+        100% { /* stay rotated at 90, but change back to a circle */
+            border-radius: 50%;
+          background-color: rgb(252,72,85);
+            transform: rotate(90deg);
+        }
+
+      }
+    }
+    div#square3{
+      div.circle{
+        width: 0.875rem;
+      }
+      div#half_L.circle{
+        // background-color:cyan;
+        transform:translate(-50%, 0%);
+        border-radius: 0.875rem 0% 0% 0.875rem;
+        animation-name:leftShift;
+        animation-duration:2s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+      }
+      div#half_R.circle{
+        transform:translate(50%, 0%);
+        border-radius: 0% 0.875rem 0.875rem 0%;
+        animation-name:rightShift;
+        animation-duration:2s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+      }
+      @keyframes leftShift{
+        0%{
+          transform:translate(-50%, 0%);
+        }
+        25%{
+          transform:translate(-100%, 0%);
+        }
+        50%{
+          transform:translate(-100%, 0%);
+        }
+        75%{
+          transform:translate(-50%, 0%);
+        }
+        100%{
+          transform:translate(-50%, 0%);
+        }
+      }
+      @keyframes rightShift{
+        0%{
+          transform:translate(50%, 0%);
+        }
+        25%{
+          transform:translate(100%, 0%);
+        }
+        50%{
+          transform:translate(100%, 0%);
+        }
+        75%{
+          transform:translate(50%, 0%);
+        }
+        100%{
+          transform:translate(50%, 0%);
+        }
+      }
+    }
+    div#square4{
+      div#circle4
+      {
+        animation-name: circle4;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      @keyframes circle4{
+        0% {
+          background-color: rgba(252,72,85,1);
+          transform:scale(1,1);
+        }
+        //PULSE 1
+        20% {
+          background-color: rgba(252,72,85,1);
+          transform:scale(1,1);
+        }
+        22% {
+          background-color: rgba(252,72,85,0.5);
+          transform:scale(1.25,1.25);
+        }
+        35%{
+          background-color: rgba(252,72,85,1);
+          transform:scale(1,1);
+        }
+        //PULSE 2
+        50% {
+          background-color: rgba(252,72,85,1);
+          transform:scale(1,1);
+        }
+        52% {
+          background-color: rgba(252,72,85,0.5);
+          transform:scale(1.25,1.25);
+        }
+        55%{
+          background-color: rgba(252,72,85,1);
+          transform:scale(1,1);
+        }
+        //PULSE 3
+        60% {
+          background-color: rgba(252,72,85,1);
+          transform:scale(1,1);
+        }
+        62% {
+          background-color: rgba(252,72,85,0.5);
+          transform:scale(1.25,1.25);
+        }
+        65%{
+          background-color: rgba(252,72,85,1);
+          transform:scale(1,1);
+        }
+        100%{
+          background-color: rgba(252,72,85,1);
+          transform:scale(1,1);
+        }
+        
+      }
+    }
+  }
+}
+        
+
+      div#circle3{}
+      div#circle4{}
+   
