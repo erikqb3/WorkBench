@@ -5,18 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesMovie.Models;
 
-public class RazorPagesMovieContext : DbContext
-{
-    public RazorPagesMovieContext (DbContextOptions<RazorPagesMovieContext> options)
-        : base(options)
-    {
-    }
 
-    public DbSet<RazorPagesMovie.Models.MyMovie> MyMovie { get; set; } = default!;
-}
-
-
-namespace RazorPagesMovie.Data
+namespace RazorPagesMovieContext.Data
 {
     public class RazorPagesMovieContext : DbContext
     {
@@ -29,3 +19,18 @@ namespace RazorPagesMovie.Data
     }
 
 }
+
+
+// namespace RazorPagesMovie.Data
+// {
+//     public class RazorPagesMovieContext : DbContext
+//     {
+//         public RazorPagesMovieContext (DbContextOptions<RazorPagesMovieContext> options)
+//             : base(options)
+//         {
+//         }
+
+//         public DbSet<RazorPagesMovie.Models.MyMovie> MyMovie { get; set; } = default!;
+//     }
+
+// }

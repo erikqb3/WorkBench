@@ -7,8 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesMovie.Models;
 
-namespace RazorPagesMovie.Pages_Movies
-{
+
     public class IndexModel : PageModel
     {
         private readonly RazorPagesMovieContext _context;
@@ -28,4 +27,4 @@ namespace RazorPagesMovie.Pages_Movies
             }
         }
     }
-}
+
