@@ -1,0 +1,60 @@
+@page
+@model MyScriptureJournal3.Pages_Journal.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ScriptNotes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ScriptNotes.ID" />
+            <div class="form-group">
+                <label asp-for="ScriptNotes.Canon" class="control-label"></label>
+                <input asp-for="ScriptNotes.Canon" class="form-control" />
+                <span asp-validation-for="ScriptNotes.Canon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScriptNotes.Book" class="control-label"></label>
+                <input asp-for="ScriptNotes.Book" class="form-control" />
+                <span asp-validation-for="ScriptNotes.Book" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScriptNotes.Chapter" class="control-label"></label>
+                <input asp-for="ScriptNotes.Chapter" class="form-control" />
+                <span asp-validation-for="ScriptNotes.Chapter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScriptNotes.Verses" class="control-label"></label>
+                <input asp-for="ScriptNotes.Verses" class="form-control" />
+                <span asp-validation-for="ScriptNotes.Verses" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScriptNotes.Notes" class="control-label"></label>
+                <input asp-for="ScriptNotes.Notes" class="form-control" />
+                <span asp-validation-for="ScriptNotes.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScriptNotes.CreatedDate" class="control-label"></label>
+                <input asp-for="ScriptNotes.CreatedDate" class="form-control" />
+                <span asp-validation-for="ScriptNotes.CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,58 @@
+@page
+@model MyScriptureJournal3.Pages_Journal.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ScriptNotes</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptNotes.Canon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptNotes.Canon)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptNotes.Book)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptNotes.Book)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptNotes.Chapter)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptNotes.Chapter)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptNotes.Verses)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptNotes.Verses)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptNotes.Notes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptNotes.Notes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptNotes.CreatedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptNotes.CreatedDate)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ScriptNotes.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
